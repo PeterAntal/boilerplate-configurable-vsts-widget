@@ -9,7 +9,7 @@ From the repo directory:
 1. (Command Line: get current bits with bower) bower install
 2. Override the publisher in vss-extension.json with your publisher Id. Learn to [create a publisher](https://www.visualstudio.com/en-us/docs/integrate/extensions/publish/overview).
 3. (Command Line: Create your extension) tfx extension create --manifest-globs vss-extension.json --rev-version
-4. Publish your extension from [Marketplace])(https://marketplace.visualstudio.com/manage/publishers)
+4. Publish your extension from [Marketplace](https://marketplace.visualstudio.com/manage/publishers)
 5. Share your extension to your test account
 6. From your account, "Manage Extensions", select "Boilerplate Configuration Widget" and "Install" it
 
