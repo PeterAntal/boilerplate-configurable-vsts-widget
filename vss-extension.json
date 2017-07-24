@@ -1,0 +1,76 @@
+{
+    "manifestVersion": 1,
+    "id": "boilerplate-configuration-widget",
+    "version": "1.0.0",
+    "name": "Boilerplate Configuration Widget",
+    "description": "Minimal neccessary boilerplate to start implementing your configurable widget.",
+    "publisher": "PeterAntal",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "img/logo.png"
+    },
+    "demands": ["contribution/ms.vss-dashboards-web.widget-sdk-version-2"],
+    "contributions": [
+        {
+            "id": "BoilerplateConfigurationWidget.Widget",
+            "type": "ms.vss-dashboards-web.widget",
+            "targets": [
+                "ms.vss-dashboards-web.widget-catalog",
+                ".BoilerplateConfigurationWidget.Configuration"
+            ],
+            "properties": {
+                "name": "BoilerplateConfigurationWidget",
+                "description": "All the boilerplate neccessary for implementing your widget",
+                "catalogIconUrl": "img/catalogImage.png",
+                "previewImageUrl": "img/previewImage.png",
+                "uri": "content/widget.html",
+                "supportedSizes": [
+                    {
+                        "rowSpan": 1,
+                        "columnSpan": 2
+                    }
+                ],
+                "supportedScopes": [
+                    "project_team"
+                ]
+            }
+        },
+        {
+            "id": "BoilerplateConfigurationWidget.Configuration",
+            "type": "ms.vss-dashboards-web.widget-configuration",
+            "targets": [
+                "ms.vss-dashboards-web.widget-configuration"
+            ],
+            "properties": {
+                "name": "WidgetConfiguration Configuration", 
+                "description": "Configures HelloWorldWidget", 
+                "uri": "content/configuration.html"
+            }
+        }
+    ],
+    "files": [                
+        {
+            "path": "bower_components/vss-web-extension-sdk/lib/VSS.SDK.min.js",
+            "addressable": true
+        },
+        {
+            "path": "content",
+            "addressable": true
+        },
+        {
+            "path": "img",
+            "addressable": true
+        },
+        {
+            "path": "scripts",
+            "addressable": true
+        }
+    ],
+    "scopes": [
+        "vso.work"
+    ]
+}
