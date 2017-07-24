@@ -2,7 +2,7 @@
  
 This widget is factored from essence of material from  [Add a dashboard widget](https://www.visualstudio.com/en-us/docs/integrate/extensions/develop/add-dashboard-widget) tutorial and [Widget Samples](https://github.com/Microsoft/vsts-extension-samples/), to help get into efficient Widget development inner loop as quickly as possible, based on existing Widget patterns.
 
-## Critical steps
+# Critical steps
 Critical Steps to start testing your widget:
 
 From the repo directory:
@@ -13,10 +13,8 @@ From the repo directory:
 5. Share your extension to your test account
 6. From your account, "Manage Extensions", select "Boilerplate Configuration Widget" and "Install" it
 
-##Dev Inner Loop
 
-
-##Customization steps
+#Customization steps
 These are not critical until you are packaging a widget for public consumption.
 1. Line 3- Override the publisher-unique extension "id". This is the identity of the extension for it's lifespan.
 2. Line 5-Override the extension "name", this is the user facing name of the extension from the gallery.
