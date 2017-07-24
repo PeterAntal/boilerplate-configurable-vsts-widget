@@ -11,7 +11,7 @@ From the repo directory:
 -(Command Line: Create your extension) tfx extension create --manifest-globs vss-extension.json --rev-version
 -Publish your extension from [Marketplace])(https://marketplace.visualstudio.com/manage/publishers)
 -Share your extension to your test account
--From your account, go to the marketplace and "Install" the shared widget
+-From your account, "Manage Extensions", select "Boilerplate Configuration Widget" and "Install" it
 
 ##Dev Inner Loop
 

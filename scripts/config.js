@@ -4,7 +4,7 @@ VSS.init({
 });
 
 VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
-    VSS.register("HelloWorldWidget.Configuration", function () {   
+    VSS.register("BoilerplateConfigurationWidget.Configuration", function () {   
         var $queryDropdown = $("#query-path-dropdown");
         
         return {

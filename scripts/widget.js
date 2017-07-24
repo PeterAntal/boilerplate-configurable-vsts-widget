@@ -5,7 +5,7 @@ VSS.init({
 
 VSS.require(["TFS/Dashboards/WidgetHelpers", "TFS/WorkItemTracking/RestClient"], function (WidgetHelpers, TFS_Wit_WebApi) {
     WidgetHelpers.IncludeWidgetStyles();
-    VSS.register("WidgetConfiguration.Widget", function () {
+    VSS.register("BoilerplateConfigurationWidget.Widget", function () {
         var projectId = VSS.getWebContext().project.id;
 
         var getQueryInfo = function (widgetSettings) {

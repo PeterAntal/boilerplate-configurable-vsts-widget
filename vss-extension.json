@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "boilerplate-configuration-widget",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "name": "Boilerplate Configuration Widget",
     "description": "Minimal neccessary boilerplate to start implementing your configurable widget.",
     "publisher": "PeterAntal",
@@ -46,8 +46,8 @@
                 "ms.vss-dashboards-web.widget-configuration"
             ],
             "properties": {
-                "name": "WidgetConfiguration Configuration", 
-                "description": "Configures HelloWorldWidget", 
+                "name": "BoilerplateConfigurationWidget Configuration", 
+                "description": "Configures BoilerplateConfigurationWidget", 
                 "uri": "content/configuration.html"
             }
         }
