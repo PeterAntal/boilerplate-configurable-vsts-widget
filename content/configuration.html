@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>        					
-			<script src="..\bower_components/vss-web-extension-sdk/lib/VSS.SDK.min.js"></script>      
-			<script src="..\scripts/config.js"></script>      			
+			<script type="text/javascript" src="../lib/VSS.SDK.min.js"></script>
+			<script type="text/javascript">
+				VSS.init({
+					explicitNotifyLoaded: true,
+					usePlatformStyles: true,
+					configureModuleLoader: true
+				});
+				// Load main entry point for extension
+				VSS.require(["../dist/WidgetConfiguration"], function () {
+					// Loading succeeded
+					VSS.notifyLoadSucceeded();
+				});
+			</script>		
 		</head>
 		<body>
+			<div class="heyo"></div>
+
 			<div class="container">
 				<fieldset>
 					<label class="label">Query: </label>

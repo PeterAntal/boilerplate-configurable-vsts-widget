@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="..\bower_components/vss-web-extension-sdk/lib/VSS.SDK.min.js"></script>
-	<script type="text/javascript" src="..\scripts/widget.js"></script>
+	<script type="text/javascript" src="../lib/VSS.SDK.min.js"></script>
+	<script type="text/javascript">
+		VSS.init({
+			explicitNotifyLoaded: true,
+			usePlatformStyles: true,
+			configureModuleLoader: true
+		});
+		// Load main entry point for extension
+		VSS.require(["../dist/Widget"], function () {
+			// Loading succeeded
+			VSS.notifyLoadSucceeded();
+		});
+	</script>
 </head>
 <body>
 	<div class="widget">
