@@ -59,9 +59,9 @@ export class DataManager<T extends State>{
 }
 
 export class ComponentBase<P extends Props,S extends State> extends React.Component<P, S> {
-    private dataManager: DataManager<S>;
-    private store: BaseStore<S>;
-    private actions: Actions;
+    protected dataManager: DataManager<S>;
+    protected store: BaseStore<S>;
+    protected actions: Actions;
 
     private setStoreStateDelegate = () => this.setStoreState();
 
@@ -69,15 +69,20 @@ export class ComponentBase<P extends Props,S extends State> extends React.Compon
     //Set the stage for initial rendering
     public componentWillMount(): void {
         this.dataManager = this.createDataManager();
-        this.actions = new Actions();
-        this.store = new BaseStore<S>(this.actions, this.dataManager.getInitialState() as S);
+        this.actions = this.createActions();
+        this.store = this.createStore();
 
+        this.initiateRequest();
+    }
+
+    protected initiateRequest(): void{
         this.dataManager.requestData().then((state) => {
             this.actions.provideData.invoke(state);
             this.setState(state);
         });
     }
 
+    //Note: store handling with base is awkward. This part needs to be revisited.
     private setStoreState(): void {
         this.setState(this.getStoreState());
     }
@@ -88,6 +93,14 @@ export class ComponentBase<P extends Props,S extends State> extends React.Compon
 
     protected createDataManager(): DataManager<S> {
         return new DataManager<S>();
+    }
+
+    protected createActions(): Actions {
+        return new Actions();
+    }
+
+    protected createStore(): BaseStore<S> {
+        return new BaseStore<S>(this.actions, this.dataManager.getInitialState() as S);
     }
 
     public componentDidMount(): void {

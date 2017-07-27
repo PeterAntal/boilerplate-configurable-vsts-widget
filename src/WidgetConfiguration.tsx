@@ -21,13 +21,12 @@ class WidgetConfiguration {
     private settings:QueryWidgetSettings;
 
     public load(widgetSettings: WidgetContracts.WidgetSettings,
-        widgetConfigurationContext: WidgetContracts.IWidgetConfigurationContext): IPromise<WidgetContracts.WidgetStatus> {
-        var $reactContainer = $(".react-container");
+        widgetConfigurationContext: WidgetContracts.IWidgetConfigurationContext): IPromise<WidgetContracts.WidgetStatus> {        
 
         this.widgetConfigurationContext = widgetConfigurationContext;
-        this.settings = WidgetSettingsHelper.Parse(widgetSettings.customSettings.data);
+        this.settings = WidgetSettingsHelper.Parse<QueryWidgetSettings>(widgetSettings.customSettings.data);
         
-
+        var $reactContainer = $(".react-container");
         let container = $reactContainer.eq(0).get()[0];
         ReactDOM.render(<QueryConfigComponent initialConfiguration={this.settings} onChange={(settings: QueryWidgetSettings)=>{ this.settings=settings; this.onChange()}} />, container) as React.Component<any, any>;
         return WidgetHelpers.WidgetStatusHelper.Success();

@@ -25,7 +25,23 @@ export class WitQueryEnumerator {
     }
 }
 
-/** Enumerates out 2-layer hierarchy of WIT Queries */
+/** Reads metadata about a query */
+export class WitQueryReader {
+    project: string;    
+    queryId: string;
+
+    constructor(project: string, queryId: string) {
+        this.project = project;
+        this.queryId = queryId;
+
+    }
+
+    public getResults(): IPromise<QueryHierarchyItem> {
+        return getClient().getQuery(this.project, this.queryId);
+    }
+}
+
+/** Collects results from a single query */
 export class WitQueryRunner {
     project: string;
     team: string;
