@@ -9,5 +9,6 @@
         "baseUrl": "./dist",
 
         "jsx" :"react"
+
     }
 }

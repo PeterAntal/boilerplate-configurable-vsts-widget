@@ -1,5 +1,13 @@
 {
+  "name": "widget-sample-fabric-react",
+  "version": "1.0.0",
+  "description": "Widget extension using Office UI Fabric React",
   "dependencies": {
+    "react-dom": "^15.6.1",
+    "typescript": "2.3.3",
     "vss-web-extension-sdk": "^2.117.0"
+  },
+  "scripts": {
+    "build": "node_modules/.bin/tsc"
   }
 }

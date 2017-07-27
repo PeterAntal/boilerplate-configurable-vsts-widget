@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "boilerplate-configuration-widget",
-    "version": "1.0.5",
+    "version": "1.0.96",
     "name": "Boilerplate Configuration Widget",
     "description": "Minimal neccessary boilerplate to start implementing your configurable widget.",
     "publisher": "PeterAntal",
@@ -65,11 +65,11 @@
             "path": "dist",
             "addressable": true
         },
-        {
+        {            
 	    	"path": "node_modules/vss-web-extension-sdk/lib",
 		    "addressable": true,
     		"packagePath": "lib"
-	}
+        }
     ],
     "scopes": [
         "vso.work"
