@@ -61,7 +61,7 @@ export class QueryConfigComponent extends ComponentBase<QueryConfigProps, QueryC
                 getItemId= {(item: QueryHierarchyItem) => item.id}
                 getItemText={ (item: QueryHierarchyItem) => item.path}
                 onChange={ (item: QueryHierarchyItem)=>{ 
-                        this.getStoreState().configuration.queryId = item.path;
+                        this.getStoreState().configuration.queryId = item.id;
                         this.props.onChange(this.getStoreState().configuration);
                     }
                 }

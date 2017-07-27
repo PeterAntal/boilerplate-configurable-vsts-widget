@@ -22,23 +22,25 @@ export interface PickerProps<T> {
 export class Picker<T> extends React.Component<PickerProps<T>, {}> {
     selectedItem: T;
     public render(): JSX.Element {
-        return (<select id="queryPicker" defaultValue={this.props.initialSelectionId} onChange={(event: React.FormEvent<HTMLSelectElement>) => this.onselected((event.target as any).selectedIndex)}>{this.getOptions()}</select>);
+        let defaultValue = this.props.initialSelectionId;
+        return (<select id="queryPicker" defaultValue={defaultValue} onChange={(event: React.FormEvent<HTMLSelectElement>) => this.onselected(event)}>{this.getOptions()}</select>);
     }
 
     private getOptions() {
         let values = [];
         for (let i = 0; i < this.props.itemValues.length; i++) {
             let item = this.props.itemValues[i];
-            let isSelected = false;
             values.push(<option key={i} value={this.props.getItemId(item)}>{this.props.getItemText(item)}</option>);
         }
         return values;
     }
 
-    private onselected(index: number) {
+    private onselected(event: React.FormEvent<HTMLSelectElement>) {
+        let target = (event.target as any);
+        let index = target.selectedIndex;        
         this.selectedItem = this.props.itemValues[index];
         if (this.props.onChange) {
             this.props.onChange(this.selectedItem);
-        }
+        }        
     }
 }
