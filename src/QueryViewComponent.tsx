@@ -115,11 +115,10 @@ export class QueryViewComponent extends ComponentBase<QueryViewProps, QueryViewS
         );
     }
 
-    public renderFail() {
-        let count = this.getStoreState().queryResults.workItems.length;
+    public renderFail() {        
         return (
             <div className="widget-component">
-                <h2 className="title">Fail!</h2>
+                <h2 className="title">Failed</h2>
                 <div className="error-message">{this.getStoreState().errorMessage}</div>
             </div>);
     }
